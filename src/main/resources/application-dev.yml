@@ -1,0 +1,80 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: ${GOOGLE_CLIENT_ID}
+            client-secret: ${GOOGLE_CLIENT_SECRET}
+            scope:
+              - email
+              - profile
+            redirect-uri: ${app.baseUrl}/oauth2/callback/google
+            client-name: Google
+
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/lms_learnify}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+      idle-timeout: 600000
+      max-lifetime: 1500000
+      connection-timeout: 30000
+      validation-timeout: 5000
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        use_sql_comments: true
+    open-in-view: false
+
+  jackson:
+    date-format: dd/MM/yyyy
+    time-zone: Asia/Ho_Chi_Minh
+
+  data:
+    redis:
+      url: redis://:${REDIS_PASSWORD}@${REDIS_HOST}:${REDIS_PORT}
+      timeout: 3s
+      lettuce:
+        pool:
+          max-active: 8
+          max-idle: 5
+          min-idle: 2
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    locations: classpath:db/migration
+    baseline-version: 0
+    clean-disabled: true
+
+server:
+  port: 8082
+
+media:
+  provider: cloudinary
+
+cloudinary:
+  cloud_name: ${CLOUDINARY_CLOUD_NAME}
+  api_key: ${CLOUDINARY_API_KEY}
+  api_secret: ${CLOUDINARY_API_SECRET}
+
+storage:
+  provider: ${STORAGE_PROVIDER:cloudinary}
+
+jwt:
+  secretKey: ${JWT_SECRET}
+  accessTokenExpirationMs: 900000
+  refreshTokenExpirationMs: 604800000
+
+app:
+  baseUrl: ${APP_URL}

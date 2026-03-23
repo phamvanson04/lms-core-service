@@ -1,0 +1,13 @@
+target/
+.git/
+.github/
+.idea/
+.vscode/
+.agent/
+*.log
+.env
+.env.*
+docker-compose*.yml
+README.md
+API_Design_Documentation.md
+LMS_Database_Schema.md

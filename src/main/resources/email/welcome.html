@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Chào mừng đến với Learnify</title>
+	</head>
+	<body
+		style="
+			font-family: Arial, sans-serif;
+			line-height: 1.6;
+			color: #333;
+			max-width: 600px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #f4f4f4;
+		"
+	>
+		<!-- Header -->
+		<div
+			style="
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				padding: 30px;
+				text-align: center;
+				border-radius: 10px 10px 0 0;
+			"
+		>
+			<h1 style="color: white; margin: 0; font-size: 28px">🎓 Chào mừng đến với Learnify!</h1>
+		</div>
+
+		<!-- Body -->
+		<div
+			style="
+				background: white;
+				padding: 30px;
+				border-radius: 0 0 10px 10px;
+				box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+			"
+		>
+			<!-- Greeting -->
+			<p style="font-size: 18px; margin-bottom: 20px">
+				Xin chào <span style="color: #667eea; font-weight: bold" th:text="${fullName}">Son Pham</span>,
+			</p>
+
+			<p style="margin-bottom: 20px">
+				Chúng tôi rất vui mừng chào đón bạn đến với <strong>Learnify</strong> - nền tảng học tập trực tuyến
+				hàng đầu!
+			</p>
+
+			<!-- Account Info Box -->
+			<div
+				style="
+					background: #f9f9f9;
+					padding: 20px;
+					margin: 25px 0;
+					border-radius: 8px;
+					border-left: 4px solid #667eea;
+				"
+			>
+				<p style="margin: 0 0 10px 0; font-weight: bold; color: #333">
+					Tài khoản của bạn đã được tạo thành công với thông tin:
+				</p>
+				<p style="margin: 5px 0">
+					<strong>Email:</strong>
+					<span style="color: #667eea" th:text="${email}">vanson2004tkhd@gmail.com</span>
+				</p>
+				<p style="margin: 5px 0">
+					<strong>Ngày đăng ký:</strong> <span th:text="${registrationDate}">15/12/2025 22:59</span>
+				</p>
+			</div>
+
+			<!-- Features -->
+			<p style="margin: 25px 0 15px 0; font-weight: bold; color: #333">Bây giờ bạn có thể:</p>
+			<ul style="line-height: 2; padding-left: 20px; margin: 0 0 25px 0">
+				<li>✨ Khám phá hàng nghìn khóa học chất lượng cao</li>
+				<li>🎓 Học tập theo lộ trình cá nhân hóa</li>
+				<li>🎯 Theo dõi tiến độ học tập của bạn</li>
+				<li>💬 Tương tác với cộng đồng học viên</li>
+			</ul>
+
+			<!-- CTA Button -->
+			<div style="text-align: center; margin: 30px 0">
+				<a
+					th:href="${appUrl}"
+					style="
+						display: inline-block;
+						padding: 15px 40px;
+						background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+						color: white;
+						text-decoration: none;
+						border-radius: 25px;
+						font-weight: bold;
+						font-size: 16px;
+						box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+					"
+				>
+					Bắt đầu học ngay
+				</a>
+			</div>
+
+			<!-- Support Info -->
+			<p
+				style="
+					color: #666;
+					font-size: 14px;
+					margin-top: 30px;
+					padding-top: 20px;
+					border-top: 1px solid #e0e0e0;
+				"
+			>
+				Nếu bạn cần hỗ trợ, đừng ngại liên hệ với chúng tôi qua email hoặc truy cập trang trợ giúp.
+			</p>
+
+			<!-- Footer -->
+			<div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e0e0e0; text-align: center">
+				<p style="color: #999; font-size: 12px; margin: 5px 0">© 2025 Learnify. All rights reserved.</p>
+				<p style="color: #999; font-size: 12px; margin: 5px 0">
+					Bạn nhận được email này vì đã đăng ký tài khoản tại Learnify.
+				</p>
+			</div>
+		</div>
+	</body>
+</html>
