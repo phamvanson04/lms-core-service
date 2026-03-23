@@ -32,4 +32,3 @@ public class CourseSection extends BaseEntity {
   @OneToMany(mappedBy = "section", cascade = CascadeType.ALL)
   private Set<Lesson> lessons;
 }
-

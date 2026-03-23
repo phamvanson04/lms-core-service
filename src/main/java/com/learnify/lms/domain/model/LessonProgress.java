@@ -28,4 +28,3 @@ public class LessonProgress extends BaseEntity {
   @Column(name = "last_watched_second")
   private Integer lastWatchedSecond;
 }
-

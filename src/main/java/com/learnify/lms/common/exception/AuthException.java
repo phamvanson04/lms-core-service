@@ -14,4 +14,3 @@ public class AuthException extends AppException {
     super(errorCode, cause);
   }
 }
-

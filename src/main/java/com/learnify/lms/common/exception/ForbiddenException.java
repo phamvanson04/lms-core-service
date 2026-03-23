@@ -18,4 +18,3 @@ public class ForbiddenException extends RuntimeException {
     this.errorCode = errorCode;
   }
 }
-

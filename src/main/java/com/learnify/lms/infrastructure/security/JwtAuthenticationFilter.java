@@ -1,6 +1,6 @@
 package com.learnify.lms.infrastructure.security;
 
-import com.learnify.lms.application.service.jwt.IJwtService;
+import com.learnify.lms.application.port.in.IJwtService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -66,4 +66,3 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     filterChain.doFilter(request, response);
   }
 }
-

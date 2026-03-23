@@ -1,9 +1,9 @@
 package com.learnify.lms.infrastructure.security;
 
-import com.learnify.lms.domain.model.User;
-import com.learnify.lms.infrastructure.persistence.repository.JpaUsersRepository;
 import com.learnify.lms.common.exception.AppException;
 import com.learnify.lms.common.exception.ErrorCode;
+import com.learnify.lms.domain.model.User;
+import com.learnify.lms.domain.repository.JpaUsersRepository;
 import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -27,4 +27,3 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     return new UserPrincipal(user);
   }
 }
-

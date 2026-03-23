@@ -67,4 +67,3 @@ public class Course extends BaseEntity {
   @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
   private Set<Enrollment> enrollments;
 }
-

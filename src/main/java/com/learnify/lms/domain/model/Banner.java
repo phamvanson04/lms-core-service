@@ -42,4 +42,3 @@ public class Banner extends BaseEntity {
   @JoinColumn(name = "course_id")
   private Course course;
 }
-

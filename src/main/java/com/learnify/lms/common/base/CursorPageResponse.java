@@ -13,4 +13,3 @@ public class CursorPageResponse<T> {
   private String nextCursor;
   private boolean hasNext;
 }
-

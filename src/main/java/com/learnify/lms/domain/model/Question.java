@@ -35,4 +35,3 @@ public class Question extends BaseEntity {
   @Column(name = "image_url")
   private String imageUrl;
 }
-

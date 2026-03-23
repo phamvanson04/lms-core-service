@@ -12,4 +12,3 @@ public class PresenceEventListener {
     this.messagingTemplate = messagingTemplate;
   }
 }
-

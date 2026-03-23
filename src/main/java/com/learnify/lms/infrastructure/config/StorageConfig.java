@@ -1,6 +1,6 @@
 package com.learnify.lms.infrastructure.config;
 
-import com.learnify.lms.application.service.storage.IStorageService;
+import com.learnify.lms.application.port.out.IStorageService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -25,4 +25,3 @@ public class StorageConfig {
     return cloudinaryStorageService;
   }
 }
-

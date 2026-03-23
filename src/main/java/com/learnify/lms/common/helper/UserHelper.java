@@ -1,6 +1,6 @@
 package com.learnify.lms.common.helper;
 
-import com.learnify.lms.infrastructure.persistence.repository.JpaUsersRepository;
+import com.learnify.lms.domain.repository.JpaUsersRepository;
 import java.security.SecureRandom;
 import java.text.Normalizer;
 import java.util.UUID;
@@ -60,4 +60,3 @@ public final class UserHelper {
     return username != null && USERNAME_PATTERN.matcher(username).matches();
   }
 }
-

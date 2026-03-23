@@ -25,4 +25,3 @@ public class Category extends BaseEntity {
   @Builder.Default
   private Boolean active = true;
 }
-

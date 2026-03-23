@@ -3,9 +3,9 @@ package com.learnify.lms.infrastructure.config;
 import static org.springframework.security.config.Customizer.withDefaults;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.learnify.lms.infrastructure.security.JwtAuthenticationFilter;
 import com.learnify.lms.common.base.BaseResponse;
 import com.learnify.lms.common.exception.ErrorCode;
+import com.learnify.lms.infrastructure.security.JwtAuthenticationFilter;
 import java.time.LocalDateTime;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
@@ -118,4 +118,3 @@ public class SecurityConfig {
     return source;
   }
 }
-

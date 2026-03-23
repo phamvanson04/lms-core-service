@@ -170,7 +170,7 @@ public enum ErrorCode {
   DISCUSSION_NOT_FOUND(1311, "DISCUSSION_NOT_FOUND", "Discussion not found", HttpStatus.NOT_FOUND),
   COMMENT_NOT_FOUND(1312, "COMMENT_NOT_FOUND", "Comment not found", HttpStatus.NOT_FOUND),
   NOTIFICATION_NOT_FOUND(
-      1313, "NOTIFICATION_NOT_FOUND", "Notifications not found", HttpStatus.NOT_FOUND),
+      1313, "NOTIFICATION_NOT_FOUND", "Notification not found", HttpStatus.NOT_FOUND),
   INVALID_EMAIL_FORMAT(
       1314,
       "INVALID_EMAIL_FORMAT",
@@ -355,4 +355,3 @@ public enum ErrorCode {
     return UNCATEGORIZED_EXCEPTION;
   }
 }
-

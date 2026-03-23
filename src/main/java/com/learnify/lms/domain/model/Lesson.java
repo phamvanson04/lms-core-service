@@ -38,4 +38,3 @@ public class Lesson extends BaseEntity {
   @OneToMany(mappedBy = "lesson", cascade = CascadeType.ALL)
   private Set<Assignment> assignments;
 }
-

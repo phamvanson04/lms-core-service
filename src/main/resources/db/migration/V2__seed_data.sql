@@ -27,11 +27,11 @@ ON CONFLICT (email) DO NOTHING;
 INSERT INTO user_roles (user_id, role_id)
 SELECT u.id, r.id
 FROM users u, role r
-WHERE u.email = 'admin@learnify.com' AND r.role_name = 'ADMIN'
+WHERE u.email = 'vanson2004tkdh@gmail.com' AND r.role_name = 'ADMIN'
 ON CONFLICT DO NOTHING;
 
--- Insert default permissions for ROLE_ADMIN
-INSERT INTO permissions (id, permission_code) VALUES
+-- Insert default permission for ROLE_ADMIN
+INSERT INTO permission (id, permission_code) VALUES
     (gen_random_uuid(), 'USER_READ'),
     (gen_random_uuid(), 'USER_WRITE'),
     (gen_random_uuid(), 'USER_DELETE'),
@@ -50,11 +50,11 @@ INSERT INTO permissions (id, permission_code) VALUES
     (gen_random_uuid(), 'COUPON_WRITE')
 ON CONFLICT (permission_code) DO NOTHING;
 
--- Assign all permissions to ROLE_ADMIN
+-- Assign all permission to ROLE_ADMIN
 INSERT INTO role_permissions (role_id, permission_id)
 SELECT r.id, p.id
 FROM role r
-CROSS JOIN permissions p
+CROSS JOIN permission p
 WHERE r.role_name = 'ADMIN'
 ON CONFLICT DO NOTHING;
 

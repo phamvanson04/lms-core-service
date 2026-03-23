@@ -48,4 +48,3 @@ public class Assignment extends BaseEntity {
   @OneToMany(mappedBy = "assignment", cascade = CascadeType.ALL)
   private Set<Submission> submissions;
 }
-

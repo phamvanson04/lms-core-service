@@ -14,4 +14,3 @@ public class CourseException extends AppException {
     super(errorCode, cause);
   }
 }
-

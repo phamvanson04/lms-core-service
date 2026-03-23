@@ -36,4 +36,3 @@ public class Review extends BaseEntity {
   @Builder.Default
   private Boolean isApproved = false; // moderation
 }
-

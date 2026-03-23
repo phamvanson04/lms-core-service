@@ -7,4 +7,3 @@ public class AuthConstants {
   public static final String ROLE_INSTRUCTOR = "INSTRUCTOR";
   public static final String ROLE_ADMIN = "ADMIN";
 }
-

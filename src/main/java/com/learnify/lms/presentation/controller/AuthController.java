@@ -3,11 +3,11 @@ package com.learnify.lms.presentation.controller;
 import static com.learnify.lms.common.constants.Constants.LOGIN_SUCCESSFUL;
 import static com.learnify.lms.common.constants.Constants.REGISTERED_SUCCESSFULLY;
 
-import com.learnify.lms.presentation.dto.request.auth.CreateAccountRequest;
-import com.learnify.lms.presentation.dto.request.auth.LoginRequest;
-import com.learnify.lms.presentation.dto.response.auth.AuthenticationResponse;
-import com.learnify.lms.presentation.dto.response.auth.RegistrationResponse;
-import com.learnify.lms.application.service.auth.IAuthService;
+import com.learnify.lms.application.dto.request.auth.CreateAccountRequest;
+import com.learnify.lms.application.dto.request.auth.LoginRequest;
+import com.learnify.lms.application.dto.response.auth.AuthenticationResponse;
+import com.learnify.lms.application.dto.response.auth.RegistrationResponse;
+import com.learnify.lms.application.port.in.IAuthService;
 import com.learnify.lms.common.base.BaseResponse;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -42,4 +42,3 @@ public class AuthController {
     return BaseResponse.success(authResponse, "Token refreshed successfully");
   }
 }
-

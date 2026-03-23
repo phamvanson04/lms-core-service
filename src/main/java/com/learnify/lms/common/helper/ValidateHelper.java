@@ -54,4 +54,3 @@ public class ValidateHelper {
     return PASSWORD_STRONG_PATTERN.matcher(password).matches();
   }
 }
-

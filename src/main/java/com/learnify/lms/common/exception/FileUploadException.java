@@ -14,4 +14,3 @@ public class FileUploadException extends AppException {
     super(errorCode, cause);
   }
 }
-

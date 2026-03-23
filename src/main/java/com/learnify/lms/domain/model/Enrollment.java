@@ -43,4 +43,3 @@ public class Enrollment extends BaseEntity {
   @Column(name = "expired_at")
   private LocalDateTime expiredAt;
 }
-

@@ -42,4 +42,3 @@ public class GlobalExceptionHandler {
         .body(BaseResponse.error(ErrorCode.FORBIDDEN, ErrorCode.FORBIDDEN.getMessage()));
   }
 }
-
