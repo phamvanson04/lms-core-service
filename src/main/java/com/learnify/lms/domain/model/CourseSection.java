@@ -1,6 +1,5 @@
 package com.learnify.lms.domain.model;
 
-import com.learnify.lms.common.base.BaseEntity;
 import jakarta.persistence.*;
 import java.util.Set;
 import lombok.*;
@@ -32,4 +31,3 @@ public class CourseSection extends BaseEntity {
   @OneToMany(mappedBy = "section", cascade = CascadeType.ALL)
   private Set<Lesson> lessons;
 }
-

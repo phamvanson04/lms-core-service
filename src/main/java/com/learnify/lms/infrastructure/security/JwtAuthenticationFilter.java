@@ -1,6 +1,6 @@
 package com.learnify.lms.infrastructure.security;
 
-import com.learnify.lms.application.service.jwt.IJwtService;
+import com.learnify.lms.application.port.output.JwtService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -18,7 +18,7 @@ import org.springframework.web.filter.OncePerRequestFilter;
 @Component
 @RequiredArgsConstructor
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
-  private final IJwtService jwtService;
+  private final JwtService jwtService;
   private final UserDetailsService userDetailsService;
 
   @Override
@@ -27,8 +27,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
       throws ServletException, IOException {
     String token = null; // kiểm tra túi quần cookie có thẻ ra vào ko (token)
     final String accessTokenCookieName = "access_token";
-    final String TYPE = "type";
-    final String ACCESS_TYPE = "access";
     if (request.getCookies() != null) {
       for (var cookie : request.getCookies()) {
         if (accessTokenCookieName.equals(cookie.getName())) {
@@ -43,13 +41,11 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
       return;
     }
     try {
-      var claims = jwtService.extractAllClaims(token);
-      String type = claims.get(TYPE, String.class);
-      if (!ACCESS_TYPE.equals(type)) {
+      if (!jwtService.isAccessToken(token)) {
         filterChain.doFilter(request, response);
         return;
       }
-      String userId = claims.getSubject();
+      String userId = jwtService.extractSubject(token);
       if (userId != null && SecurityContextHolder.getContext().getAuthentication() == null) {
         UserDetails userDetails = userDetailsService.loadUserByUsername(userId);
         UsernamePasswordAuthenticationToken authentication =
@@ -66,4 +62,3 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     filterChain.doFilter(request, response);
   }
 }
-

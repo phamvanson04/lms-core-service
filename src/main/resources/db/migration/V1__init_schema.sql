@@ -27,8 +27,8 @@ CREATE TABLE role (
     role_name VARCHAR(20) NOT NULL UNIQUE
 );
 
--- Create permissions table
-CREATE TABLE permissions (
+-- Create permission table
+CREATE TABLE permission (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     permission_code VARCHAR(255) NOT NULL UNIQUE
 );
@@ -43,7 +43,7 @@ CREATE TABLE user_roles (
 -- Create role_permissions junction table
 CREATE TABLE role_permissions (
     role_id UUID NOT NULL REFERENCES role(id) ON DELETE CASCADE,
-    permission_id UUID NOT NULL REFERENCES permissions(id) ON DELETE CASCADE,
+    permission_id UUID NOT NULL REFERENCES permission(id) ON DELETE CASCADE,
     PRIMARY KEY (role_id, permission_id)
 );
 

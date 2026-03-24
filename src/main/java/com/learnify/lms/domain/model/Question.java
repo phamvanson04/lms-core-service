@@ -1,6 +1,5 @@
 package com.learnify.lms.domain.model;
 
-import com.learnify.lms.common.base.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.Where;
@@ -35,4 +34,3 @@ public class Question extends BaseEntity {
   @Column(name = "image_url")
   private String imageUrl;
 }
-

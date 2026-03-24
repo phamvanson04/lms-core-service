@@ -1,7 +1,6 @@
 package com.learnify.lms.domain.model;
 
-import com.learnify.lms.domain.model.enums.DiscountType;
-import com.learnify.lms.common.base.BaseEntity;
+import com.learnify.lms.domain.enums.DiscountType;
 import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -50,4 +49,3 @@ public class Coupon extends BaseEntity {
       inverseJoinColumns = @JoinColumn(name = "course_id"))
   private Set<Course> applicableCourses;
 }
-

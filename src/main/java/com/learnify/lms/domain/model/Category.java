@@ -1,6 +1,5 @@
 package com.learnify.lms.domain.model;
 
-import com.learnify.lms.common.base.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -25,4 +24,3 @@ public class Category extends BaseEntity {
   @Builder.Default
   private Boolean active = true;
 }
-

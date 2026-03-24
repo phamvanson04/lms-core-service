@@ -60,4 +60,3 @@ public class UserPrincipal
     return true;
   }
 }
-

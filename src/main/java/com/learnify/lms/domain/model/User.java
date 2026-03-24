@@ -1,6 +1,5 @@
 package com.learnify.lms.domain.model;
 
-import com.learnify.lms.common.base.BaseEntity;
 import jakarta.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -75,4 +74,3 @@ public class User extends BaseEntity {
     }
   }
 }
-

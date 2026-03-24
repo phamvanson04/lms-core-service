@@ -1,7 +1,6 @@
 package com.learnify.lms.domain.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.learnify.lms.common.base.BaseEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
@@ -42,4 +41,3 @@ public class Banner extends BaseEntity {
   @JoinColumn(name = "course_id")
   private Course course;
 }
-

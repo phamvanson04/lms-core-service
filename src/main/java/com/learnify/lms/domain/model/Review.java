@@ -1,6 +1,5 @@
 package com.learnify.lms.domain.model;
 
-import com.learnify.lms.common.base.BaseEntity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
@@ -36,4 +35,3 @@ public class Review extends BaseEntity {
   @Builder.Default
   private Boolean isApproved = false; // moderation
 }
-

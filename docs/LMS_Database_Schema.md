@@ -92,7 +92,7 @@ Many-to-Many relationship between Users and Roles.
 
 ### 4. Permission Table
 
-Manages system permissions.
+Manages system permission.
 
 **Table Name**: `permission`
 

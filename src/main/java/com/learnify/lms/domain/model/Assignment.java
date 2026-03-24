@@ -1,6 +1,5 @@
 package com.learnify.lms.domain.model;
 
-import com.learnify.lms.common.base.BaseEntity;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Set;
@@ -48,4 +47,3 @@ public class Assignment extends BaseEntity {
   @OneToMany(mappedBy = "assignment", cascade = CascadeType.ALL)
   private Set<Submission> submissions;
 }
-

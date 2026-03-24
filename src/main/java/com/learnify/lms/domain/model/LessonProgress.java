@@ -1,6 +1,5 @@
 package com.learnify.lms.domain.model;
 
-import com.learnify.lms.common.base.BaseEntity;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -28,4 +27,3 @@ public class LessonProgress extends BaseEntity {
   @Column(name = "last_watched_second")
   private Integer lastWatchedSecond;
 }
-

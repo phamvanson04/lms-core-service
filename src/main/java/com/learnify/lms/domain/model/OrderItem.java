@@ -1,6 +1,5 @@
 package com.learnify.lms.domain.model;
 
-import com.learnify.lms.common.base.BaseEntity;
 import jakarta.persistence.*;
 import java.math.BigDecimal;
 import lombok.*;
@@ -37,4 +36,3 @@ public class OrderItem extends BaseEntity {
   @Column(nullable = false)
   private Integer quantity;
 }
-

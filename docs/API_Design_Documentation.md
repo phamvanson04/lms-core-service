@@ -1737,7 +1737,7 @@ file: <file_attachment>
 			{
 				"id": "uuid",
 				"title": "New course enrolled",
-				"message": "You have successfully enrolled in Complete Java Programming",
+				"message": "You have successfully enrolled input Complete Java Programming",
 				"type": "COURSE",
 				"isRead": false,
 				"createdAt": "2024-01-15T00:00:00Z"

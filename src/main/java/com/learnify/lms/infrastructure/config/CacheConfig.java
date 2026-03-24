@@ -28,7 +28,4 @@ public class CacheConfig {
         .withInitialCacheConfigurations(cacheConfigurations)
         .build();
   }
-
-
 }
-

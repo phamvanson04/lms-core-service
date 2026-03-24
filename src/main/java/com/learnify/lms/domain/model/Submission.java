@@ -1,7 +1,6 @@
 package com.learnify.lms.domain.model;
 
-import com.learnify.lms.domain.model.enums.SubmissionStatus;
-import com.learnify.lms.common.base.BaseEntity;
+import com.learnify.lms.domain.enums.SubmissionStatus;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import lombok.*;
@@ -54,4 +53,3 @@ public class Submission extends BaseEntity {
     }
   }
 }
-

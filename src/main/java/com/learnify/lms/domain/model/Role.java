@@ -29,23 +29,22 @@ public class Role {
       name = "role_permissions",
       joinColumns = @JoinColumn(name = "role_id"),
       inverseJoinColumns = @JoinColumn(name = "permission_id"))
-  private Set<Permissions> permissions = new HashSet<>();
+  private Set<Permission> permissions = new HashSet<>();
 
-  public void addPermission(Permissions permissions) {
-    if (permissions != null && !this.permissions.contains(permissions)) {
-      this.permissions.add(permissions);
-      permissions.getRoles().add(this);
+  public void addPermission(Permission permission) {
+    if (permission != null && !this.permissions.contains(permission)) {
+      this.permissions.add(permission);
+      permission.getRoles().add(this);
     }
   }
 
-  public void removePermission(Permissions permissions) {
-    if (permissions == null) {
+  public void removePermission(Permission permission) {
+    if (permission == null) {
       return;
     }
-    if (this.permissions.contains(permissions)) {
-      this.permissions.remove(permissions);
-      permissions.getRoles().remove(this);
+    if (this.permissions.contains(permission)) {
+      this.permissions.remove(permission);
+      permission.getRoles().remove(this);
     }
   }
 }
-
