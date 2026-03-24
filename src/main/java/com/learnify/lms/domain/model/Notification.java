@@ -1,7 +1,6 @@
 package com.learnify.lms.domain.model;
 
-import com.learnify.lms.common.base.BaseEntity;
-import com.learnify.lms.domain.model.enums.NotificationChannel;
+import com.learnify.lms.domain.enums.NotificationChannel;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import lombok.*;

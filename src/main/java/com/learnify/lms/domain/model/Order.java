@@ -1,7 +1,6 @@
 package com.learnify.lms.domain.model;
 
-import com.learnify.lms.common.base.BaseEntity;
-import com.learnify.lms.domain.model.enums.OrderStatus;
+import com.learnify.lms.domain.enums.OrderStatus;
 import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

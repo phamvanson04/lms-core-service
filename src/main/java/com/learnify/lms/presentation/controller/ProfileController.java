@@ -2,9 +2,9 @@ package com.learnify.lms.presentation.controller;
 
 import com.learnify.lms.application.dto.request.auth.ChangePasswordRequest;
 import com.learnify.lms.application.dto.request.profile.UpdateProfileRequest;
+import com.learnify.lms.application.dto.response.BaseResponse;
 import com.learnify.lms.application.dto.response.auth.UserProfileResponse;
-import com.learnify.lms.application.port.IProfileService;
-import com.learnify.lms.common.base.BaseResponse;
+import com.learnify.lms.application.port.input.ProfileService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -13,7 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 @RequestMapping("/api/v1/user")
 @RequiredArgsConstructor
 public class ProfileController {
-  private final IProfileService profileService;
+  private final ProfileService profileService;
 
   @GetMapping
   public BaseResponse<UserProfileResponse> getProfile() {
