@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Assignment Reminder</title>
+	</head>
+	<body
+		style="
+			font-family: Arial, sans-serif;
+			line-height: 1.6;
+			color: #333;
+			max-width: 600px;
+			margin: 0 auto;
+			padding: 20px;
+		"
+	>
+		<div
+			style="
+				background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+				padding: 30px;
+				text-align: center;
+				border-radius: 10px 10px 0 0;
+			"
+		>
+			<h1 style="color: white; margin: 0">⏰ Assignment Reminder</h1>
+		</div>
+
+		<div style="background: #f9f9f9; padding: 30px; border-radius: 0 0 10px 10px">
+			<p style="font-size: 18px">Hello <strong th:text="${studentName}">Student</strong>,</p>
+
+			<p>This is a friendly reminder about your upcoming assignment:</p>
+
+			<div
+				style="
+					background: white;
+					padding: 20px;
+					margin: 20px 0;
+					border-radius: 5px;
+					border-left: 4px solid #f5576c;
+				"
+			>
+				<h2 style="margin: 0 0 10px 0; color: #f5576c" th:text="${assignmentTitle}">Assignment Title</h2>
+				<p style="margin: 5px 0; color: #666">
+					<strong>Course:</strong> <span th:text="${courseName}">Course Name</span>
+				</p>
+				<p style="margin: 5px 0; color: #666">
+					<strong>Due Date:</strong>
+					<span th:text="${dueDate}" style="color: #f5576c; font-weight: bold">Due Date</span>
+				</p>
+				<p style="margin: 5px 0; color: #666">
+					<strong>Time Remaining:</strong> <span th:text="${timeRemaining}">Time Remaining</span>
+				</p>
+			</div>
+
+			<div
+				style="
+					background: #fff3cd;
+					border: 1px solid #ffc107;
+					padding: 15px;
+					border-radius: 5px;
+					margin: 20px 0;
+				"
+			>
+				<p style="margin: 0; color: #856404">
+					<strong>⚠️ Important:</strong> Make sure to submit your assignment before the deadline to avoid
+					late penalties.
+				</p>
+			</div>
+
+			<div style="text-align: center; margin: 30px 0">
+				<a
+					th:href="${assignmentUrl}"
+					style="
+						display: inline-block;
+						padding: 15px 30px;
+						background: #f5576c;
+						color: white;
+						text-decoration: none;
+						border-radius: 5px;
+						font-weight: bold;
+					"
+				>
+					Submit Assignment
+				</a>
+			</div>
+
+			<p style="color: #666; font-size: 14px; margin-top: 30px">
+				If you have any questions, please contact your instructor or our support team.
+			</p>
+
+			<hr style="border: none; border-top: 1px solid #ddd; margin: 30px 0" />
+
+			<p style="color: #999; font-size: 12px; text-align: center">© 2025 Learnify. All rights reserved.</p>
+		</div>
+	</body>
+</html>
