@@ -11,24 +11,24 @@ Backend service for the Learnify Learning Management System, implemented with Sp
 
 ## Table of Contents
 
-- [Tech Stack Icons](#tech-stack-icons)
-- [System Overview](#system-overview)
-- [Architecture Overview](#architecture-overview)
-- [Core Stack](#core-stack)
-- [Project Layout](#project-layout)
-- [Runtime Configuration](#runtime-configuration)
-- [Environment Variables](#environment-variables)
-- [Security Model](#security-model)
-- [API Conventions](#api-conventions)
-- [Endpoints](#endpoints)
-- [Quick Start](#quick-start)
-- [Build and Test](#build-and-test)
-- [Docker](#docker)
-- [WebSocket Support](#websocket-support)
-- [Database Migration](#database-migration)
-- [Project Documentation](#project-documentation)
-- [Troubleshooting](#troubleshooting)
-- [License](#license)
+-    [Tech Stack Icons](#tech-stack-icons)
+-    [System Overview](#system-overview)
+-    [Architecture Overview](#architecture-overview)
+-    [Core Stack](#core-stack)
+-    [Project Layout](#project-layout)
+-    [Runtime Configuration](#runtime-configuration)
+-    [Environment Variables](#environment-variables)
+-    [Security Model](#security-model)
+-    [API Conventions](#api-conventions)
+-    [Endpoints](#endpoints)
+-    [Quick Start](#quick-start)
+-    [Build and Test](#build-and-test)
+-    [Docker](#docker)
+-    [WebSocket Support](#websocket-support)
+-    [Database Migration](#database-migration)
+-    [Project Documentation](#project-documentation)
+-    [Troubleshooting](#troubleshooting)
+-    [License](#license)
 
 ## Tech Stack Icons
 
@@ -40,13 +40,13 @@ Backend service for the Learnify Learning Management System, implemented with Sp
 
 Learnify LMS API currently provides:
 
-- Authentication and token refresh flow
-- User profile operations
-- JWT-based cookie authentication
-- Redis-backed OTP and cache-related infrastructure
-- Flyway-managed schema migrations
-- Cloudinary-based media upload integration
-- SMTP email template infrastructure
+-    Authentication and token refresh flow
+-    User profile operations
+-    JWT-based cookie authentication
+-    Redis-backed OTP and cache-related infrastructure
+-    Flyway-managed schema migrations
+-    Cloudinary-based media upload integration
+-    SMTP email template infrastructure
 
 The codebase already includes foundational pieces for additional modules (for example WebSocket messaging and extra infrastructure hooks) that can be expanded over time.
 
@@ -54,11 +54,11 @@ The codebase already includes foundational pieces for additional modules (for ex
 
 The code follows layered boundaries:
 
-- presentation: HTTP layer (controllers, request/response DTOs)
-- application: use-cases and orchestration services
-- domain: core models and business rules
-- infrastructure: persistence adapters, security, external systems
-- common: shared constants, base response wrapper, helpers, exceptions
+-    presentation: HTTP layer (controllers, request/response DTOs)
+-    application: use-cases and orchestration services
+-    domain: core models and business rules
+-    infrastructure: persistence adapters, security, external systems
+-    common: shared constants, base response wrapper, helpers, exceptions
 
 ```mermaid
 flowchart LR
@@ -73,21 +73,21 @@ flowchart LR
 
 ## Core Stack
 
-| Area | Technology |
-| --- | --- |
-| Language | Java 21 |
-| Framework | Spring Boot 3.2.1 |
-| Security | Spring Security + JWT |
-| ORM/Data Access | Spring Data JPA |
-| Main Database | PostgreSQL |
-| Caching/Transient Data | Redis (Lettuce) |
-| Migrations | Flyway |
-| Object Mapping | MapStruct |
-| Boilerplate Reduction | Lombok |
-| File Storage | Cloudinary |
-| Email | Spring Mail |
-| Build Tool | Gradle 8.7+ |
-| Realtime Transport | Spring WebSocket (STOMP + SockJS) |
+| Area                   | Technology                        |
+| ---------------------- | --------------------------------- |
+| Language               | Java 21                           |
+| Framework              | Spring Boot 3.2.1                 |
+| Security               | Spring Security + JWT             |
+| ORM/Data Access        | Spring Data JPA                   |
+| Main Database          | PostgreSQL                        |
+| Caching/Transient Data | Redis (Lettuce)                   |
+| Migrations             | Flyway                            |
+| Object Mapping         | MapStruct                         |
+| Boilerplate Reduction  | Lombok                            |
+| File Storage           | Cloudinary                        |
+| Email                  | Spring Mail                       |
+| Build Tool             | Gradle 8.7+                       |
+| Realtime Transport     | Spring WebSocket (STOMP + SockJS) |
 
 ## Project Layout
 
@@ -109,31 +109,31 @@ src/main/resources/
 
 ## Runtime Configuration
 
-- Active profile in base config: dev
-- Local server port (dev/prod profile files): 8082
-- Primary API base URL: http://localhost:8082
-- Security CORS origin currently allows: http://localhost:3000
+-    Active profile in base config: dev
+-    Local server port (dev/prod profile files): 8082
+-    Primary API base URL: http://localhost:8082
+-    Security CORS origin currently allows: http://localhost:3000
 
 ## Environment Variables
 
 The application expects runtime values from environment variables.
 
-| Variable | Required | Purpose | Example |
-| --- | --- | --- | --- |
-| DB_URL | Yes | PostgreSQL JDBC URL | jdbc:postgresql://localhost:5432/lms_learnify |
-| DB_USERNAME | Yes | Database username | postgres |
-| DB_PASSWORD | Yes | Database password | postgres |
-| REDIS_HOST | Yes | Redis host | localhost |
-| REDIS_PORT | Yes | Redis port | 6379 |
-| REDIS_PASSWORD | Yes | Redis password (supports auth-enabled Redis) | your_redis_password |
-| JWT_SECRET | Yes | Base64-encoded signing key for JWT | your_base64_secret |
-| APP_URL | Yes | App base URL used in OAuth callback | http://localhost:8082 |
-| GOOGLE_CLIENT_ID | Recommended | Google OAuth2 client id | your_google_client_id |
-| GOOGLE_CLIENT_SECRET | Recommended | Google OAuth2 client secret | your_google_client_secret |
-| CLOUDINARY_CLOUD_NAME | Recommended | Cloudinary cloud name | your_cloud_name |
-| CLOUDINARY_API_KEY | Recommended | Cloudinary API key | your_api_key |
-| CLOUDINARY_API_SECRET | Recommended | Cloudinary API secret | your_api_secret |
-| STORAGE_PROVIDER | Optional | Storage provider switch | cloudinary |
+| Variable              | Required    | Purpose                                      | Example                                       |
+| --------------------- | ----------- | -------------------------------------------- | --------------------------------------------- |
+| DB_URL                | Yes         | PostgreSQL JDBC URL                          | jdbc:postgresql://localhost:5432/lms_learnify |
+| DB_USERNAME           | Yes         | Database username                            | postgres                                      |
+| DB_PASSWORD           | Yes         | Database password                            | postgres                                      |
+| REDIS_HOST            | Yes         | Redis host                                   | localhost                                     |
+| REDIS_PORT            | Yes         | Redis port                                   | 6379                                          |
+| REDIS_PASSWORD        | Yes         | Redis password (supports auth-enabled Redis) | your_redis_password                           |
+| JWT_SECRET            | Yes         | Base64-encoded signing key for JWT           | your_base64_secret                            |
+| APP_URL               | Yes         | App base URL used in OAuth callback          | http://localhost:8082                         |
+| GOOGLE_CLIENT_ID      | Recommended | Google OAuth2 client id                      | your_google_client_id                         |
+| GOOGLE_CLIENT_SECRET  | Recommended | Google OAuth2 client secret                  | your_google_client_secret                     |
+| CLOUDINARY_CLOUD_NAME | Recommended | Cloudinary cloud name                        | your_cloud_name                               |
+| CLOUDINARY_API_KEY    | Recommended | Cloudinary API key                           | your_api_key                                  |
+| CLOUDINARY_API_SECRET | Recommended | Cloudinary API secret                        | your_api_secret                               |
+| STORAGE_PROVIDER      | Optional    | Storage provider switch                      | cloudinary                                    |
 
 Example .env values:
 
@@ -163,26 +163,26 @@ STORAGE_PROVIDER=cloudinary
 
 Authentication uses JWT in HttpOnly cookies.
 
-- Access token cookie name: access_token
-- Refresh token cookie name: refresh_token
-- Access token includes: sub (user id), roles, type=access
-- Refresh token includes: sub (user id), type=refresh
-- Cookie settings from current JWT service:
-- HttpOnly: true
-- Secure: false (current local-friendly setting)
-- SameSite: Lax
-- Path: /
+-    Access token cookie name: access_token
+-    Refresh token cookie name: refresh_token
+-    Access token includes: sub (user id), roles, type=access
+-    Refresh token includes: sub (user id), type=refresh
+-    Cookie settings from current JWT service:
+-    HttpOnly: true
+-    Secure: false (current local-friendly setting)
+-    SameSite: Lax
+-    Path: /
 
 Token durations (from profile configuration):
 
-- Access token: 900000 ms (15 minutes)
-- Refresh token: 604800000 ms (7 days)
+-    Access token: 900000 ms (15 minutes)
+-    Refresh token: 604800000 ms (7 days)
 
 Public routes in current security config:
 
-- /api/v1/auth/login
-- /api/v1/auth/register
-- /api/v1/auth/otp/**
+-    /api/v1/auth/login
+-    /api/v1/auth/register
+-    /api/v1/auth/otp/\*\*
 
 All other routes require authentication.
 
@@ -194,11 +194,11 @@ The API wraps responses with BaseResponse.
 
 ```json
 {
-  "success": true,
-  "status": 200,
-  "message": "Operation successful",
-  "result": {},
-  "timestamp": "2026-03-23T10:00:00"
+	"success": true,
+	"status": 200,
+	"message": "Operation successful",
+	"result": {},
+	"timestamp": "2026-03-23T10:00:00"
 }
 ```
 
@@ -206,13 +206,13 @@ The API wraps responses with BaseResponse.
 
 ```json
 {
-  "success": false,
-  "status": 401,
-  "error": {
-    "errorCode": "UNAUTHORIZED",
-    "message": "Unauthorized"
-  },
-  "timestamp": "2026-03-23T10:00:00"
+	"success": false,
+	"status": 401,
+	"error": {
+		"errorCode": "UNAUTHORIZED",
+		"message": "Unauthorized"
+	},
+	"timestamp": "2026-03-23T10:00:00"
 }
 ```
 
@@ -220,11 +220,11 @@ The API wraps responses with BaseResponse.
 
 ### Auth API
 
-| Method | Path | Auth Required | Description |
-| --- | --- | --- | --- |
-| POST | /api/v1/auth/register | No | Register a new account |
-| POST | /api/v1/auth/login | No | Login and issue auth cookies |
-| POST | /api/v1/auth/refresh | No (requires refresh cookie) | Rotate and issue new auth cookies |
+| Method | Path                  | Auth Required                | Description                       |
+| ------ | --------------------- | ---------------------------- | --------------------------------- |
+| POST   | /api/v1/auth/register | No                           | Register a new account            |
+| POST   | /api/v1/auth/login    | No                           | Login and issue auth cookies      |
+| POST   | /api/v1/auth/refresh  | No (requires refresh cookie) | Rotate and issue new auth cookies |
 
 Register example:
 
@@ -259,13 +259,13 @@ curl -i -X POST "http://localhost:8082/api/v1/auth/refresh" \
 
 ### User API
 
-| Method | Path | Auth Required | Description |
-| --- | --- | --- | --- |
-| GET | /api/v1/user | Yes | Get current user profile |
-| PUT | /api/v1/user | Yes | Update current user profile |
-| PUT | /api/v1/user/avatar | Yes | Update avatar image |
-| PUT | /api/v1/user/change-password | Yes | Change account password |
-| DELETE | /api/v1/user | Yes | Delete current account |
+| Method | Path                         | Auth Required | Description                 |
+| ------ | ---------------------------- | ------------- | --------------------------- |
+| GET    | /api/v1/user                 | Yes           | Get current user profile    |
+| PUT    | /api/v1/user                 | Yes           | Update current user profile |
+| PUT    | /api/v1/user/avatar          | Yes           | Update avatar image         |
+| PUT    | /api/v1/user/change-password | Yes           | Change account password     |
+| DELETE | /api/v1/user                 | Yes           | Delete current account      |
 
 Get profile example:
 
@@ -295,8 +295,8 @@ cd learnify-lms
 
 Required runtime services:
 
-- PostgreSQL
-- Redis
+-    PostgreSQL
+-    Redis
 
 Create database:
 
@@ -306,8 +306,8 @@ CREATE DATABASE lms_learnify;
 
 ### 3) Configure environment variables
 
-- Add environment variables in your shell, IDE run configuration, or .env approach
-- Ensure JWT_SECRET is Base64-encoded for jjwt key decoding
+-    Add environment variables in your shell, IDE run configuration, or .env approach
+-    Ensure JWT_SECRET is Base64-encoded for jjwt key decoding
 
 ### 4) Start the API
 
@@ -357,57 +357,62 @@ docker run --rm -p 8082:8081 --env-file .env learnify-lms:latest
 
 Important note:
 
-- Container image exposes port 8081
-- Profile configuration defaults to port 8082 for local app execution
+-    Container image exposes port 8081
+-    Profile configuration defaults to port 8082 for local app execution
 
 ## WebSocket Support
 
 WebSocket broker config currently provides:
 
-- STOMP endpoint: /ws (SockJS enabled)
-- Broker prefix: /topic
-- Application destination prefix: /app
+-    STOMP endpoint: /ws (SockJS enabled)
+-    Broker prefix: /topic
+-    Application destination prefix: /app
 
 ## Database Migration
 
 Flyway migration files are in:
 
-- src/main/resources/db/migration
+-    src/main/resources/db/migration
 
 Migrations run automatically at startup when Flyway is enabled.
 
 ## Project Documentation
 
-- API design: [API_Design_Documentation.md](API_Design_Documentation.md)
-- Database schema: [LMS_Database_Schema.md](LMS_Database_Schema.md)
+-    API design: [API_Design_Documentation.md](API_Design_Documentation.md)
+-    Database schema: [LMS_Database_Schema.md](LMS_Database_Schema.md)
 
 ## Troubleshooting
 
 Common startup issues:
 
 1. JWT key errors
-- Cause: JWT_SECRET is not valid Base64
-- Fix: provide a Base64-encoded secret string
+
+-    Cause: JWT_SECRET is not valid Base64
+-    Fix: provide a Base64-encoded secret string
 
 2. Database connection failure
-- Cause: invalid DB_URL/credentials or PostgreSQL not running
-- Fix: verify DB service status and environment values
+
+-    Cause: invalid DB_URL/credentials or PostgreSQL not running
+-    Fix: verify DB service status and environment values
 
 3. Redis connection failure
-- Cause: Redis host/port/password mismatch
-- Fix: align REDIS_HOST, REDIS_PORT, REDIS_PASSWORD with your Redis instance
+
+-    Cause: Redis host/port/password mismatch
+-    Fix: align REDIS_HOST, REDIS_PORT, REDIS_PASSWORD with your Redis instance
 
 4. CORS blocked requests from frontend
-- Cause: frontend origin differs from configured allowed origin
-- Fix: update allowed origins in SecurityConfig
+
+-    Cause: frontend origin differs from configured allowed origin
+-    Fix: update allowed origins in SecurityConfig
 
 5. OAuth callback mismatch
-- Cause: APP_URL does not match your runtime host
-- Fix: set APP_URL and OAuth provider redirect URI consistently
+
+-    Cause: APP_URL does not match your runtime host
+-    Fix: set APP_URL and OAuth provider redirect URI consistently
 
 Infrastructure note:
 
-- docker-compose.yml currently includes MongoDB and Kafka for extended modules. They are not required to run the current auth/profile API flows.
+-    docker-compose.yml currently includes MongoDB and Kafka for extended modules. They are not required to run the current auth/profile API flows.
 
 ## License
 
